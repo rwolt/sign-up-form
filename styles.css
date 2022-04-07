@@ -111,18 +111,25 @@ body {
 }
 
 .form-ribbon form {
-  width: 80%;
+  width: 100%;
 }
 
 .form-container {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   width: 100%;
 }
 
 .form-container ul {
   list-style-type: none;
+  display: flex;
   width: 100%;
+  justify-content: flex-start;
+}
+
+.form-container ul li {
+  width: 33%;
 }
 
 .form-container li label {
@@ -135,8 +142,8 @@ body {
 }
 
 .form-container li input {
-  width: 90%;
   height: 2rem;
+  width: 100%;
   font-size: 1.1rem;
   padding: 0.4rem;
   margin-bottom: 0.6rem;
@@ -144,18 +151,18 @@ body {
   border-radius: 5px;
 }
 
-.form-container .form-group li:last-child input {
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.6em;
+  width: 100%;
+}
+
+.form-container .form-row li:last-child input {
   margin-bottom: 0;
 }
 
-.form-group {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  margin-top: 0.8rem;
-}
-
-.form-group:first-child {
+.form-row li:first-child {
   margin-right: 80px;
 }
 
@@ -168,8 +175,13 @@ body {
   background-color: #5e5341;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
+.account-button-container button:hover {
+  background-color: #867f76;
+}
 .account-button-container p {
   margin: 20px 0;
   font-size: 16px;
@@ -179,4 +191,13 @@ body {
 .account-button-container a {
   color: #5e5341;
   text-decoration: none;
+}
+
+#user_fn:focus,
+#user_ln:focus,
+#user_email:focus,
+#user_phone:focus,
+#user_pw:focus,
+#user_pw_confirm:focus {
+  outline: 1px solid dodgerblue;
 }
